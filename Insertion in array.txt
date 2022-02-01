@@ -1,0 +1,46 @@
+#include<stdio.h>   
+#include<conio.h>
+void display( int arr[],int n){
+	for( int i=0;i<n;i++){
+		printf("%d\t",arr[i]);
+	}
+}
+    int  indInsertion(int arr[], int size ,int element, int capacity, int Index){
+    if(size>=capacity)
+    {
+    	printf(" your array is full so you are not capabel to insertion");
+    	return -1;
+	}
+	else
+	{
+	for( int i=size-1;i>=Index;i--){
+		arr[i+1] = arr[i];
+	}
+	arr[Index]=element;
+	
+    
+	}
+    }
+	 
+int main(){
+    int x;
+    int	arr[100],size,element,Index;
+    printf("Enter size\n");
+    scanf("%d",&size);
+    printf("enter values\n");
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("enter the element to insert\n");
+    scanf("%d",&element);
+    printf("enter index\n");
+    scanf("%d",&Index);
+ 
+	display(arr,size);
+    x=indInsertion(arr,size, element,100,Index);
+    size+=1;
+    printf("\n");
+    display(arr,size);
+	return 0;
+}
